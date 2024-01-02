@@ -10,11 +10,15 @@ export const getCat = () => (dispatch) => {
     (res) => {
       console.log(res);
       const cat = res.data;
-      dispatch(getCatFactSuccess(cat));
+      setTimeout(() => {
+        dispatch(getCatFactSuccess(cat));
+      }, 3000);
     },
     (error) => {
       const message = error.message;
-      dispatch(getCatFactError(message));
+      setTimeout(() => {
+        dispatch(getCatFactError(message));
+      }, 3000);
     }
   );
 };
